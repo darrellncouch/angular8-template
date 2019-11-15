@@ -1,0 +1,66 @@
+.heading {
+    background: #11998e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    height: 15rem;
+
+}
+
+.container {
+    padding: 5rem;
+}
+
+.sidenav {
+
+    &__container {
+        border: 1px solid black;
+  
+      &--folded {
+          width: 7rem;
+          height: 80rem;
+          background-color: cyan;
+          animation-name: close;
+          animation-duration: 75ms;
+        .sidenav__dropdown--folded {
+            opacity: 0;
+        }
+
+        &:hover {
+            animation-name: open;
+            animation-duration: 75ms;
+            width: 35rem;
+            height: 80rem;
+            background-color: hotpink;
+
+            .sidenav__dropdown--folded {
+                opacity: 1;
+                animation-name: slideIn;
+                animation-duration: 75ms;
+            }
+            
+        }
+      }
+  
+    }
+  
+  }
+
+  @keyframes close {
+    from {width: 35rem; height: 80rem;}
+    to {width:7rem; height: 80rem;}
+  }
+
+  @keyframes open {
+    from {width: 7rem; height: 80rem;}
+    to {width: 35rem; height: 80rem;}
+  }
+
+  @keyframes slidIn {
+    from {width: 0}
+    to {width: default}
+  }
+
+.test {
+    background-color: hotpink;
+}

@@ -1,0 +1,147 @@
+.navbar {
+    &__container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+    
+    }
+
+    &__drawer {
+        width: 30rem;
+        z-index: 9999;
+        animation-name: slideIn;
+        animation-duration: .5s;
+        background: #282b33;
+
+        &--folded {
+            min-width: 7rem;
+            animation-name: slideOut;
+            animation-duration: .5s;
+            z-index: 9999;
+            background-color: #282b33;
+        }
+
+        &--folded:hover {
+            animation-name: slideIn;
+            animation-duration: .5s;
+            width: 30rem;
+
+            .logo-container {
+
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                height: 6rem;
+                color: white;
+                padding: 0 1rem 0 1rem;
+
+                &__title--folded {
+                    flex-grow: 1;
+                    display: flex;
+                    font-size: 2rem;
+                }
+
+                &__button--folded {
+                    padding-left: 2rem;
+                    background-color: rgba(255, 255, 255, 0);
+                    flex-grow: 0;
+                    display: flex;
+                    color: #efefef;
+                }
+            }
+        }
+    }
+
+    &__content {
+        flex-grow: 1;
+        margin-left: 30rem !important;
+        animation-name: contentSlideOut;
+        animation-duration: .5s;
+
+        &--folded {
+            
+            flex-grow: 1;
+            margin-left: 7rem !important;
+            animation-name: contentSlideIn;
+            animation-duration: .5s;
+        }
+
+        
+    }
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+    padding: 0 1rem 0 1rem;
+    color: #efefef;
+    background-color: #21a084;
+    box-shadow: 0px 4px 5px -1px rgba(0,0,0,0.75);
+
+    &__icon {
+        flex-grow: 0;
+    }
+
+    &__title{
+        font-size: 2rem;
+        flex-grow: 1;
+
+        &--folded {
+            display: none;
+        }
+
+        &--folded:hover {
+            display: flex;
+            
+        }
+    }
+
+    &__button {
+        padding: 0 !important;
+        flex-grow: 0;
+        background-color: rgba(255, 255, 255, 0);
+        color: #efefef;
+
+        &--folded {
+            display: none;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        &--folded:hover {
+            display: flex;
+        }
+    }
+
+}
+
+#main {
+    height: 100%;
+}
+
+
+@keyframes slideOut {
+    from {width: 30rem;}
+    to {width: 7rem;}
+}
+
+@keyframes slideIn {
+    from {width: 7rem;}
+    to {width: 30rem;}
+}
+
+@keyframes contentSlideIn {
+    from {margin-left: 30rem;}
+    to {margin-left: 7rem !important;}
+}
+
+@keyframes contentSlideOut {
+    from {margin-left: 7rem;}
+    to {margin-left: 30rem;}
+}

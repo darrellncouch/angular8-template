@@ -1,0 +1,29 @@
+<div class="container test" fxLayout="row wrap" fxLayoutAlign="start start">
+    <div class="" fxFlex="15%" fxLayout="row" fxLayoutAlign="start start">
+            
+            <div class="marg-left--xs sidenav__container" fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="end center">
+                    <div fxFlex="25%">
+                        <button [ngClass]="buttonClass"
+                                mat-button>
+                            <mat-icon aria-hidden="false"
+                                    aria-label="Example home icon">
+                                menu
+                            </mat-icon>
+                        </button>
+                    </div>
+                    
+                <div fxFlex="100%">
+                    <mat-form-field class="marg-top--xs marg-right--sm sidenav__dropdown--folded">
+                        <mat-label>Report Group</mat-label>
+                        <mat-select>
+                        <mat-option *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                
+            </div>
+    </div>
+    
+</div>
